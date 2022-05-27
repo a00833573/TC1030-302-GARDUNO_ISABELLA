@@ -1,13 +1,13 @@
-# ifndef serie_h
-# define serie_h
+# ifndef Serie_h
+# define Serie_h
 # include <stdio.h>
-# include "video.h"
+# include "Video.h"
 
 // clase derivada de la clase video
-class serie : public video {
+class Serie : public Video {
 public:
     // Métodos constructores
-    serie();
+    Serie();
     
     // Métodos modificadores (sets)
     void setEpisodio(int _episodio);
@@ -26,4 +26,4 @@ private:
     int cantidad;
 };
 
-# endif /* serie_h */
+# endif /* Serie_h */

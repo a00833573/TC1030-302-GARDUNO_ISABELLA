@@ -1,14 +1,14 @@
-# ifndef pelicula_h
-# define pelicula_h
+# ifndef Pelicula_h
+# define Pelicula_h
 # include <stdio.h>
-# include "video.h"
+# include "Video.h"
 
 // clase derivada de la clase video
-class pelicula : public video {
+class Pelicula : public Video {
 public:
     // Métodos constructores
-    pelicula();
-    pelicula(string _iD, string _titulo, int _duracion, string _genero, double _calificacionPromedio, int _oscares);
+    Pelicula();
+    Pelicula(string _iD, string _titulo, int _duracion, string _genero, double _calificacionPromedio, int _oscares);
     
     // Métodos modificadores (sets)
     void setOscares(int _oscares);
@@ -23,4 +23,4 @@ private:
     int oscares;
 };
 
-# endif /* pelicula_h */
+# endif /* Pelicula_h */

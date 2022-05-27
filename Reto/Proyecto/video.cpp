@@ -1,7 +1,7 @@
-# include "video.h"
+# include "Video.h"
 
 // Métodos constructores
-video::video(){
+Video::Video(){
     iD = "000";
     titulo = "Tigres perdieron muy triste";
     duracion = 105;
@@ -9,7 +9,7 @@ video::video(){
     calificacionPromedio = 0;
 }
 
-video::video(string _iD, string _titulo, int _duracion, string _genero, double _calificacionPromedio){
+Video::Video(string _iD, string _titulo, int _duracion, string _genero, double _calificacionPromedio){
     double _calificacion;
     iD = _iD;
     titulo = _titulo;
@@ -19,48 +19,48 @@ video::video(string _iD, string _titulo, int _duracion, string _genero, double _
 }
 
 // Métodos modificadores (sets)
-void video::setId(string _iD){
+void Video::setId(string _iD){
     iD = _iD;
 }
 
-void video::setTitulo(string _titulo){
+void Video::setTitulo(string _titulo){
     titulo = _titulo;
 }
 
-void video::setDuracion(int _duracion){
+void Video::setDuracion(int _duracion){
     duracion = _duracion;
 }
 
-void video::setGenero(string _genero){
+void Video::setGenero(string _genero){
     genero = _genero;
 }
 
-void video::setCalificacion(double _calificacionPromedio){
+void Video::setCalificacion(double _calificacionPromedio){
     calificacionPromedio = _calificacionPromedio;
 }
 
  // Métodos de acceso (gets)
-string video::getId(){
+string Video::getId(){
     return iD;
 }
 
-string video::getTitulo(){
+string Video::getTitulo(){
     return titulo;
 }
 
-int video::getDuracion(){
+int Video::getDuracion(){
     return duracion;
 }
 
-string video::getGenero(){
+string Video::getGenero(){
     return genero;
 }
 
-double video::setCalificacion(){
+double Video::setCalificacion(){
     return calificacionPromedio;
 }
 
 // Otros métodos
-string video::str(){
+string Video::str(){
     return iD + ',' + titulo + ',' + to_string(duracion) + ',' + genero + ',' + to_string(calificacionPromedio);
 }

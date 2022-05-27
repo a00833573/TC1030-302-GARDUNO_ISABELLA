@@ -1,33 +1,33 @@
-# include "serie.h"
+# include "Serie.h"
 
 // Métodos constructores
-serie::serie( ) : video( ) {
+Serie::Serie( ) : Video( ) {
 
 }
     
 // Métodos modificadores (sets)
-void serie::setEpisodio(int _episodio){
+void Serie::setEpisodio(int _episodio){
 
 }
 
-void serie::setCantidad(int _cantidad){
+void Serie::setCantidad(int _cantidad){
     cantidad = _cantidad;
 }
 
 // Métodos de acceso (gets)
-int serie::getEpisodio(){
+int Serie::getEpisodio(){
     
 }
 
-int serie::getCantidad(){
+int Serie::getCantidad(){
     return cantidad;
 }
 
 // Otros métodos
-double serie::calculaCalPromedio(){
+double Serie::calculaCalPromedio(){
 
 }
 
-string serie::str(){
+string Serie::str(){
     return iD + ',' + titulo + ',' + to_string(duracion) + ',' + genero + ',' + to_string(calificacionPromedio);
 }

@@ -1,16 +1,16 @@
-# ifndef video_h
-# define video_h
+# ifndef Video_h
+# define Video_h
 
 # include <stdio.h>
 # include <iostream>
 using namespace std;
 
-class video {
+class Video {
 
 public:
     // Métodos constructores
-    video();
-    video(string _iD, string _titulo, int _duracion, string _genero, double _calificacionPromedio);
+    Video();
+    Video(string _iD, string _titulo, int _duracion, string _genero, double _calificacionPromedio);
 
     // Métodos modificadores (sets)
     void setId(string _iD);
@@ -38,4 +38,4 @@ protected:
 
 };
 
-# endif /* video_h */
+# endif /* Video_h */
