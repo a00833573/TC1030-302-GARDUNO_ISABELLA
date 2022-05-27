@@ -1,5 +1,5 @@
 # Isabella Garduño Horneffer
-# A00833573
-# Avance 1
+## A00833573
+### Avance 1
 
 # UML - DIAGRAMA DE CLASES (subir la foto)
