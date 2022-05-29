@@ -1,13 +1,13 @@
 # include "Episodio.h"
 
 // Métodos constructores
-Episodio::Episodio() : Serie(){
+Episodio::Episodio() {
     titulo = "Supernatural";
     temporada = 15;
     calificacion = 10;
 }
 
-Episodio::Episodio(string _titulo, int _temporada, int _calificacion) : Serie () {
+Episodio::Episodio(string _titulo, int _temporada, int _calificacion) {
     titulo = _titulo;
     temporada = _temporada;
     calificacion = _calificacion;

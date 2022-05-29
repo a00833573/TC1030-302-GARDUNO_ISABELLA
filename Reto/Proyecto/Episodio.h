@@ -1,10 +1,11 @@
 # ifndef Episodio_h
 # define Episodio_h
-# include <stdio.h>
-# include "serie.h"
 
-// clase derivada de la clase serie
-class Episodio : public Serie {
+# include <stdio.h>
+# include <iostream>
+using namespace std;
+
+class Episodio {
 public:
     // Métodos constructores
     Episodio();
