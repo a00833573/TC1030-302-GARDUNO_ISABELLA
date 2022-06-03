@@ -53,7 +53,7 @@ void Peliculas::leerArchivo(){
             row[iR++] = word;               // añade la word al arreglo row e incementa iR para la proxima palabra
             }
     
-        //setPtrPelicula new Pelicula(row[0], row [1], stoi(row[2]), row[3], stod(row[4]), stoi(row[5])));
+        setPtrPelicula( new Pelicula(row[0], row [1], stoi(row[2]), row[3], stod(row[4]), stoi(row[5]) ));
         
         }
         
