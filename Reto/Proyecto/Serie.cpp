@@ -12,9 +12,11 @@ Serie::Serie(string _iD, string _titulo, int _duracion, string _genero, double _
 // Métodos modificadores (sets)
 void Serie::setEpisodio(int _index, Episodio _episodio){
     // Validar que el _index sea correcto, si no cumple el index no se cambia el episodio
-    if ((cantidad >= 0) && (_index <= cantidad))
+    if ((cantidad >= 0) && (_index <= cantidad)){
         episodios[_index] = _episodio;
-    else 
+        cantidad = cantidad + 1;
+    }
+    else
         Episodio();
 }
 
@@ -25,7 +27,7 @@ void Serie::setCantidad(int _cantidad){
 // Métodos de acceso (gets)
 Episodio Serie::getEpisodio(int _index){
     // Validar que el _index sea correcto, si no cumple el index no se cambia el episodio}
-    if ((cantidad >= 0) && (_index < cantidad))
+    if ((cantidad >= 0) && (_index <= cantidad))
         return episodios[_index];
     else
         return Episodio();

@@ -24,10 +24,10 @@ public:
     string getTitulo();
     int getDuracion();
     string getGenero();
-    double setCalificacion();
+    double getCalificacion();
 
     // Otros métodos
-    string str();
+    virtual string str();
 
 protected:
     string iD;

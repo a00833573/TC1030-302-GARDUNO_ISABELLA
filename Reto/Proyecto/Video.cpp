@@ -56,7 +56,7 @@ string Video::getGenero(){
     return genero;
 }
 
-double Video::setCalificacion(){
+double Video::getCalificacion(){
     return calificacionPromedio;
 }
 

@@ -3,6 +3,7 @@
 # include "Pelicula.cpp"
 # include "Serie.cpp"
 # include "Episodio.cpp"
+# include "Peliculas.cpp"
 
 
 int main() {
@@ -44,10 +45,29 @@ int main() {
     serie1.setEpisodio(3, episodio4);
     serie1.setEpisodio(4, episodio5);
     
-    serie1.setCantidad(serie1.getCantidad() + 5);
-
     // Desplegar la serie con sus episodios
     cout << serie1.str() << endl;
-
     cout << serie1.getCantidad() << endl;
+
+
+    // Declaración de un arreglo de apuntadores de la clase Video
+    Video *arrPtrVideos[] = {&video1, &video2, &serie1, &pelicula1};
+
+    // Desplegar los prt (dirección de memoria) - apuntadores
+    cout << "Ptrs del arreglo Video\n";
+    for(int index = 0; index < 4; index++){
+        cout << arrPtrVideos[index] << endl;
+        cout << arrPtrVideos[index]->str() << endl;
+    }
+
+    // Desplegar la clase películas
+    string genero;
+    Peliculas directorioPeliculas{};
+    directorioPeliculas.leerArchivo();
+    
+    cout << "Teclea el genero que quieres: ";
+    cin >> genero;
+    
+    directorioPeliculas.reporteGenero(genero);
+    directorioPeliculas.reporteTodasLasPeliculas();
 }
