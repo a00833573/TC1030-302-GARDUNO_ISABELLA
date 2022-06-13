@@ -13,7 +13,6 @@ class Peliculas {
 public:
     // Métodos constructores
     Peliculas();
-    Peliculas(string _id, string _titulo, int _duracion, string _genero, double _calificacionPromedio, int _oscares);
 
     // Métodos modificadores (sets)
     void setPtrPelicula(Pelicula *_ptrPelicula);

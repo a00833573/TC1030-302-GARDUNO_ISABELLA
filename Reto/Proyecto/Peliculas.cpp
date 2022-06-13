@@ -4,11 +4,8 @@
 
 // Métodos constructores
 Peliculas::Peliculas(){
-    
-}
-
-Peliculas::Peliculas(string _id, string _titulo, int _duracion, string _genero, double _calificacionPromedio, int _oscares){
-
+    arrPtrPeliculas[MAX_PEL] = nullptr;
+    cantidad  = 0;
 }
 
 // Métodos modificadores (sets)
@@ -43,7 +40,7 @@ void Peliculas::leerArchivo(){
     string row[6];                          // almacena los datos leídos del archivo :arreglo de strings
     string line, word;                      // linea: almacena la linea leída   word: alacena la palabra que se saca de line
 
-    fin.open("/Users/isabe/OneDrive/Documentos/GitHub/TC1030-302-GARDUNO_ISABELLA/Reto/Proyecto/Pelicula-1.csv", ios::in); // abrir archivo de entrada
+    fin.open("/Users/isabe/OneDrive/Documentos/GitHub/TC1030-302-GARDUNO_ISABELLA/Reto/Proyecto/Pelicula.csv", ios::in); // abrir archivo de entrada
 
     cantidad = 0;                           // inicializar el atributo cantidad con 0
     while(getline(fin, line)){              // lee una línea del archivo y la almacena en line
@@ -53,31 +50,35 @@ void Peliculas::leerArchivo(){
             row[iR++] = word;               // añade la word al arreglo row e incementa iR para la proxima palabra
             }
     
-        setPtrPelicula( new Pelicula(row[0], row [1], stoi(row[2]), row[3], stod(row[4]), stoi(row[5]) ));
+        setPtrPelicula(new Pelicula(row[0], row [1], stoi(row[2]), row[3], stod(row[4]), stoi(row[5])));
         
         }
         
         fin.close();                         // sale del ciclo cuando ya no existen más lineas en el archivo
 
         // Desplegar todas las peliculas leidas
-        for(int iR = 0; iR < cantidad; iR++){
+        /*for(int iR = 0; iR < cantidad; iR++){
             cout << iR << "-" << arrPtrPeliculas[iR]->str()<< endl;
         }
+        */
     }
 
 void Peliculas::reporteTodasLasPeliculas(){
     // Despliega todas las peliculas del arreglo de apuntadores usa al método str() existente de Pelicula
     // Calcula y despliega al final el promedio de todas las peliculas
-    int promedio = 0;
+    double promedio = 0;
     for(int iR = 0; iR < cantidad; iR++){
             cout << iR << "-" << arrPtrPeliculas[iR]->str()<< endl;
-
             promedio = (promedio + arrPtrPeliculas[iR]-> getCalificacion());
-
             cantidad = cantidad + 1;
         }
-    promedio = promedio/cantidad;
-    cout << "El promedio de todas las películas" << endl;
+
+    if (cantidad > 0){
+        cout << "Promedio: " << promedio / cantidad << endl;
+    }
+    else
+        cout << "No hay películas para reportar \n";
+
 }
 
 void Peliculas::reporteConCalificacion(double _calificacionPromedio){
@@ -86,7 +87,7 @@ void Peliculas::reporteConCalificacion(double _calificacionPromedio){
     int count = 0;
     for (int iR = 0; iR < cantidad; iR++){
         if (arrPtrPeliculas[iR]-> getCalificacion() == _calificacionPromedio){
-            cout << iR << arrPtrPeliculas[iR]->str() << endl;
+            cout << iR << ' ' << *arrPtrPeliculas[iR];
             count++;
         }
     }
@@ -102,7 +103,7 @@ void Peliculas::reporteGenero(string _genero){
     int count = 0;
     for (int iR = 0; iR < cantidad; iR++){
         if (arrPtrPeliculas[iR]-> getGenero() == _genero){
-            cout << iR << arrPtrPeliculas[iR]->str() << endl;
+            cout << iR << ' ' << *arrPtrPeliculas[iR];
             count++;
         }
     }
