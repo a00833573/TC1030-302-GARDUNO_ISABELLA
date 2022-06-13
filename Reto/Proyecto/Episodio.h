@@ -22,12 +22,12 @@ public:
     int getCalificacion();
 
     // Otros métodos
-    string str();
+    string str() const;
 
 private:
     string titulo;
     int temporada;
-    int calificacion;
+    double calificacion;
 };
 
 # endif /* Episodio_h */

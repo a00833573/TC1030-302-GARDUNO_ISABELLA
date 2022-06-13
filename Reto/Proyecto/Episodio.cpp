@@ -40,6 +40,6 @@ int Episodio::getCalificacion(){
 }
 
 // Otros métodos
-string Episodio::str(){
+string Episodio::str() const{
     return titulo + ',' + to_string(temporada) + ','  + to_string(calificacion);
 }

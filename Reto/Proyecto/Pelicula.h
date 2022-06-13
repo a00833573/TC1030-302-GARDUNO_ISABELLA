@@ -19,6 +19,9 @@ public:
     // Otros métodos
     string str();
 
+    // Sobrecarga de operadores << con función amiga 
+    friend ostream & operator<<(ostream &out, const Pelicula &p);
+
 private:
     int oscares;
 };

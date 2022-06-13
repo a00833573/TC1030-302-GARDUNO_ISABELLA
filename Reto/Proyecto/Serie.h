@@ -10,7 +10,7 @@ class Serie : public Video {
 public:
     // Métodos constructores
     Serie();
-    Serie(string _iD, string _titulo, int _duracion, string _genero, double _calificacionPromedio);
+    Serie(string _iD, string _titulo, int _duracion, string _genero, double _calificacionPromedio, int _cantidad);
     
     // Métodos modificadores (sets)
     void setEpisodio(int _index, Episodio _episodio);
@@ -23,6 +23,9 @@ public:
     // Otros métodos
     double calculaCalPromedio();
     string str();
+
+    // Sobrecarga de operadores << con función amiga 
+    friend ostream & operator<<(ostream &out, const Serie &s);
 
 private:
     Episodio episodios[5];
